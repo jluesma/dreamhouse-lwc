@@ -94,7 +94,7 @@ global with sharing class PropertyController {
         List<ContentDocumentLink> links = [select id, LinkedEntityId, ContentDocumentId from ContentDocumentLink where LinkedEntityId=:propertyId];
 
         if (links.isEmpty()) {
-            return null;
+            return null; // careful
         }
 
         Set<Id> contentIds = new Set<Id>();
