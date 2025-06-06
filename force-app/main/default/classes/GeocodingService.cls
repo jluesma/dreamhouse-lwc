@@ -1,3 +1,7 @@
+/*
+ * GeocodingService class is responsible for converting addresses into geographic coordinates.
+ * It uses the OpenStreetMap Nominatim service to perform geocoding.
+ */
 public with sharing class GeocodingService {
     private static final String BASE_URL = 'https://nominatim.openstreetmap.org/search?format=json';
 
@@ -50,6 +54,9 @@ public with sharing class GeocodingService {
         return computedCoordinates;
     }
 
+    /**
+     * GeocodingAddress class represents an address with fields for street, city, state, country, and postal code.
+     */
     public class GeocodingAddress {
         @InvocableVariable
         public String street;
@@ -63,6 +70,9 @@ public with sharing class GeocodingService {
         public String postalcode;
     }
 
+    /**
+     * Coordinates class represents geographic coordinates with fields for latitude and longitude.
+     */
     public class Coordinates {
         @InvocableVariable
         public Decimal lat;
